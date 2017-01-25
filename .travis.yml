@@ -5,4 +5,4 @@ python:
 install: "pip install pydoc3"
 install: "pip install coverage"
 # command to run tests
-#script: pytest
+script: pytest
