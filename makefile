@@ -25,7 +25,7 @@ else ifeq ($(CI), true)                # Travis CI
     PIP      := pip3.5
     PYLINT   := pylint
     COVERAGE := coverage-3.5
-    PYDOC    := pydoc3.5
+    PYDOC    := pydoc3
     AUTOPEP8 := autopep8
 else ifeq ($(shell uname -p), unknown) # Docker
     PYTHON   := python3.5
@@ -44,27 +44,20 @@ else                                   # UTCS
 endif
 
 
-.pylintrc:
-	$(PYLINT) --disable=locally-disabled --reports=no --generate-rcfile > $@
-
 collatz-tests:
-	git clone https://github.com/CS373-Fall-2016/collatz-tests.git
+	git clone https://github.com/cs329e-spring-2017/collatz-tests.git
 
 Collatz.html: Collatz.py
-	pydoc3 -w Collatz
+	$(PYDOC) -w Collatz
 
 Collatz.log:
 	git log > Collatz.log
 
 RunCollatz.tmp: RunCollatz.in RunCollatz.out RunCollatz.py
-	-$(PYLINT) Collatz.py
-	-$(PYLINT) RunCollatz.py
 	$(PYTHON) RunCollatz.py < RunCollatz.in > RunCollatz.tmp
 	diff RunCollatz.tmp RunCollatz.out
 
 TestCollatz.tmp: TestCollatz.py
-	-$(PYLINT) Collatz.py
-	-$(PYLINT) TestCollatz.py
 	$(COVERAGE) run    --branch TestCollatz.py >  TestCollatz.tmp 2>&1
 	$(COVERAGE) report -m                      >> TestCollatz.tmp
 	cat TestCollatz.tmp
