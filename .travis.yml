@@ -3,6 +3,6 @@ python:
   - 3.5
 # command to install dependencies
 install: "pip install pydoc3"
-install: "pip install coverage-3.5"
+install: "pip install coverage"
 # command to run tests
 script: pytest
