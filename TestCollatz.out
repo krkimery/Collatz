@@ -1,0 +1,67 @@
+FFFF..F
+======================================================================
+FAIL: test_eval_1 (__main__.TestCollatz)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "TestCollatz.py", line 42, in test_eval_1
+    self.assertEqual(v, 2)
+AssertionError: 1 != 2
+
+======================================================================
+FAIL: test_eval_2 (__main__.TestCollatz)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "TestCollatz.py", line 46, in test_eval_2
+    self.assertEqual(v, 20)
+AssertionError: 1 != 20
+
+======================================================================
+FAIL: test_eval_3 (__main__.TestCollatz)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "TestCollatz.py", line 50, in test_eval_3
+    self.assertEqual(v, 18)
+AssertionError: 1 != 18
+
+======================================================================
+FAIL: test_eval_4 (__main__.TestCollatz)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "TestCollatz.py", line 54, in test_eval_4
+    self.assertEqual(v, 20)
+AssertionError: 1 != 20
+
+======================================================================
+FAIL: test_solve (__main__.TestCollatz)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "TestCollatz.py", line 74, in test_solve
+    w.getvalue(), "1 2 2\n1 10 20\n11 15 18\n1 15 20\n")
+AssertionError: '1 2 1\n1 10 1\n11 15 1\n1 15 1\n' != '1 2 2\n1 10 20\n11 15 18\n1 15 20\n'
+- 1 2 1
+?     ^
++ 1 2 2
+?     ^
+- 1 10 1
+?      ^
++ 1 10 20
+?      ^^
+- 11 15 1
++ 11 15 18
+?        +
+- 1 15 1
+?      ^
++ 1 15 20
+?      ^^
+
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.017s
+
+FAILED (failures=5)
+Name             Stmts   Miss Branch BrPart  Cover   Missing
+------------------------------------------------------------
+Collatz.py          12      0      2      0   100%
+TestCollatz.py      32      0      0      0   100%
+------------------------------------------------------------
+TOTAL               44      0      2      0   100%
