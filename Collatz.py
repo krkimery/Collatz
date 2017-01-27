@@ -31,7 +31,12 @@ def collatz_eval(i, j):
     j the end       of the range, inclusive
     return the max cycle length of the range [i, j]
     """
-    
+    try:
+        assert j>=i
+        assert i>0
+    except:
+        return ""
+
     maxSteps = 0
     steps = 0
     for n in range(i,j+1):
@@ -75,7 +80,10 @@ def collatz_solve(r, w):
     r a reader
     w a writer
     """
+
     for s in r:
+        if not s.strip():
+            continue
         i, j = collatz_read(s)
         v = collatz_eval(i, j)
         collatz_print(w, i, j, v)

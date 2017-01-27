@@ -38,20 +38,20 @@ class TestCollatz (TestCase):
     # ----
 
     def test_eval_1(self):
-        v = collatz_eval(1, 2)
-        self.assertEqual(v, 2)
+        v = collatz_eval(1, 1)  #test whether boundaries of range are set correctly
+        self.assertEqual(v, 1)
 
     def test_eval_2(self):
-        v = collatz_eval(1, 10)
-        self.assertEqual(v, 20)
+        v = collatz_eval(1, 7)  #tests whether boundaries are inclusive
+        self.assertEqual(v, 17)
 
     def test_eval_3(self):
-        v = collatz_eval(11, 15)
-        self.assertEqual(v, 18)
+        v = collatz_eval(3, 2)
+        self.assertEqual(v, "")
 
     def test_eval_4(self):
-        v = collatz_eval(1, 15)
-        self.assertEqual(v, 20)
+        v = collatz_eval("   ","")
+        self.assertEqual(v, "")
 
     # -----
     # print

@@ -5,7 +5,7 @@ Ran 7 tests in 0.005s
 OK
 Name             Stmts   Miss Branch BrPart  Cover   Missing
 ------------------------------------------------------------
-Collatz.py          24      0     10      0   100%
+Collatz.py          31      1     12      1    95%   86, 85->86
 TestCollatz.py      32      0      0      0   100%
 ------------------------------------------------------------
-TOTAL               56      0     10      0   100%
+TOTAL               63      1     12      1    97%
