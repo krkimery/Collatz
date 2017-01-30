@@ -47,11 +47,11 @@ class TestCollatz (TestCase):
 
     def test_eval_3(self):
         v = collatz_eval(3, 2)
-        self.assertEqual(v, "")
+        self.assertEqual(v, 8)
 
     def test_eval_4(self):
-        v = collatz_eval("   ","")
-        self.assertEqual(v, "")
+        v = collatz_eval(1,1000000)
+        self.assertEqual(v, 525)
 
     # -----
     # print
