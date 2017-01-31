@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module Collatz</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>Collatz</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/home/kyle/Desktop/School/2017/CS329E/cs329e-collatz/Collatz.py">/home/kyle/Desktop/School/2017/CS329E/cs329e-collatz/Collatz.py</a></font></td></tr></table>
+    <p><tt>dynamicCache&nbsp;is&nbsp;a&nbsp;dictionary&nbsp;that&nbsp;uses&nbsp;integers&nbsp;as&nbsp;keys,&nbsp;and&nbsp;the&nbsp;corresponding&nbsp;<br>
+value&nbsp;is&nbsp;the&nbsp;number&nbsp;of&nbsp;Collatz-steps&nbsp;required&nbsp;for&nbsp;that&nbsp;integer&nbsp;to&nbsp;get&nbsp;to&nbsp;1.&nbsp;The&nbsp;<br>
+numbers&nbsp;choosen&nbsp;were&nbsp;the&nbsp;numbers&nbsp;most&nbsp;frequently&nbsp;encountered&nbsp;from&nbsp;1&nbsp;to&nbsp;1&nbsp;million.<br>
+&nbsp;<br>
+staticCache&nbsp;is&nbsp;a&nbsp;list&nbsp;that&nbsp;contains&nbsp;the&nbsp;number&nbsp;of&nbsp;Collatz-steps&nbsp;required&nbsp;for&nbsp;the&nbsp;<br>
+given&nbsp;index&nbsp;to&nbsp;reach&nbsp;1.&nbsp;Example:&nbsp;staticCache[3]&nbsp;shows&nbsp;that&nbsp;8&nbsp;steps&nbsp;are&nbsp;required&nbsp;for<br>
+the&nbsp;integer&nbsp;3&nbsp;to&nbsp;reach&nbsp;1.&nbsp;staticCache&nbsp;holds&nbsp;the&nbsp;Collatz-steps&nbsp;for&nbsp;the&nbsp;first&nbsp;1000&nbsp;ints.<br>
+&nbsp;<br>
+For&nbsp;each&nbsp;cache,&nbsp;style&nbsp;is&nbsp;sacrificed&nbsp;in&nbsp;favor&nbsp;of&nbsp;performance&nbsp;in&nbsp;order&nbsp;to&nbsp;pass&nbsp;Sphere.<br>
+A&nbsp;50kB&nbsp;filesize&nbsp;limit&nbsp;precludes&nbsp;the&nbsp;use&nbsp;of&nbsp;whitespace&nbsp;between&nbsp;terms&nbsp;in&nbsp;the&nbsp;caches.&nbsp;<br>
+&nbsp;<br>
+SphereCollatz.py&nbsp;has&nbsp;been&nbsp;accepted&nbsp;on&nbsp;sphere&nbsp;with&nbsp;a&nbsp;best&nbsp;runtime&nbsp;of&nbsp;1.41&nbsp;seconds.</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-collatz_eval"><strong>collatz_eval</strong></a>(i, j)</dt><dd><tt>Function&nbsp;to&nbsp;return&nbsp;the&nbsp;maximum&nbsp;number&nbsp;of<br>
+Collatz&nbsp;steps&nbsp;for&nbsp;an&nbsp;integer&nbsp;in&nbsp;the&nbsp;range<br>
+between&nbsp;i&nbsp;and&nbsp;j.</tt></dd></dl>
+ <dl><dt><a name="-collatz_print"><strong>collatz_print</strong></a>(w, i, j, v)</dt><dd><tt>Prints&nbsp;the&nbsp;2&nbsp;integers&nbsp;given&nbsp;an&nbsp;the&nbsp;<br>
+maximum&nbsp;Collatz-steps&nbsp;between&nbsp;them.</tt></dd></dl>
+ <dl><dt><a name="-collatz_read"><strong>collatz_read</strong></a>(s)</dt><dd><tt>Function&nbsp;to&nbsp;read&nbsp;a&nbsp;string&nbsp;as&nbsp;two&nbsp;integers<br>
+seperated&nbsp;by&nbsp;whitespace.</tt></dd></dl>
+ <dl><dt><a name="-collatz_solve"><strong>collatz_solve</strong></a>(r, w)</dt><dd><tt>Reads&nbsp;the&nbsp;input&nbsp;string,&nbsp;solves<br>
+the&nbsp;problem,&nbsp;and&nbsp;writes&nbsp;out&nbsp;<br>
+the&nbsp;answer.</tt></dd></dl>
+ <dl><dt><a name="-getNewValue"><strong>getNewValue</strong></a>(x)</dt><dd><tt>Recursive&nbsp;function&nbsp;which&nbsp;is&nbsp;called&nbsp;to&nbsp;<br>
+determine&nbsp;the&nbsp;Collatz&nbsp;steps&nbsp;for&nbsp;any&nbsp;<br>
+uncached&nbsp;integer&nbsp;encountered.&nbsp;Recursion<br>
+allows&nbsp;all&nbsp;integers&nbsp;encountered&nbsp;on&nbsp;the&nbsp;<br>
+path&nbsp;from&nbsp;x&nbsp;to&nbsp;1&nbsp;to&nbsp;be&nbsp;cached&nbsp;dynamically<br>
+in&nbsp;dynamicCache&nbsp;with&nbsp;their&nbsp;number&nbsp;of&nbsp;steps.</tt></dd></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>dynamicCache</strong> = {10001: 180, 10045: 92, 10049: 136, 10072: 87, 10082: 43, 10090: 43, 10130: 74, 10135: 35, 10144: 43, 10153: 61, ...}<br>
+<strong>size</strong> = 1000<br>
+<strong>staticCache</strong> = [0, 1, 2, 8, 3, 6, 9, 17, 4, 20, 7, 15, 10, 10, 18, 18, 5, 13, 21, 21, ...]</td></tr></table>
+</body></html>

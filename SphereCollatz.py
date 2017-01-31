@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
 
 # ---------------------------
-# Collatz.py
+# SphereCollatz.py
 # Kyle Kimery
 # 2017
 # ---------------------------
+
+import sys
 
 """
 dynamicCache is a dictionary that uses integers as keys, and the corresponding 
@@ -119,3 +121,9 @@ def collatz_solve(r, w):
         i, j = collatz_read(s)
         v = collatz_eval(i, j)
         collatz_print(w, i, j, v)
+
+# -------------
+# main
+# -------------
+if __name__ == "__main__":
+    collatz_solve(sys.stdin, sys.stdout)
